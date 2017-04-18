@@ -84,10 +84,11 @@ gather()
 
 '''
 
-This version uses string methods to accomplish the task.
+The version below uses string methods to accomplish the task.
 
 '''
 
+'''
 
 import string
 
@@ -121,3 +122,40 @@ def gather():
 
 gather()
 
+'''
+
+import string
+
+
+def pigify(lexis):
+    lexis_dash = lexis + '-'  # Appends a hyphen to the user input
+    lexis_dash_list = list(lexis_dash)  # Casts the lexis_dash as a list
+
+    alphabet = list(string.ascii_letters)  # Casts the alphabet as a list
+
+    for vowels in 'aeiouAEIOU':  # For loop that removes all vowels from the list 'alphabet'
+        alphabet.remove(vowels)
+
+    consonants = alphabet
+
+    for letter in consonants:
+        if letter != lexis_dash_list[0]:
+            lexis_dash = ''.join(lexis_dash_list)
+            v_oink = lexis_dash.capitalize() + 'yay'  # Capitalizes initial letter and appends suffix 'yay'
+            print(v_oink)
+        else:
+            lexis_dash_list.append(letter)
+            lexis_dash_list.remove(letter)  # Removes initial consonant
+            lexis_dash = ''.join(lexis_dash_list)
+            c_oink = lexis_dash + 'ay'  # This creates the suffix for c-initial user input
+            c_oink.capitalize()  # Capitalizes initial letter
+            print(c_oink)
+
+
+def gather():
+    lexis = input('Ive-gay emay ayay ordway: ')  # Gathers user input
+
+    pigify(lexis)
+
+
+gather()
