@@ -123,7 +123,6 @@ def gather():
 gather()
 
 '''
-
 import string
 
 
@@ -138,18 +137,23 @@ def pigify(lexis):
 
     consonants = alphabet
 
-    for letter in consonants:
-        if letter != lexis_dash_list[0]:
-            lexis_dash = ''.join(lexis_dash_list)
-            v_oink = lexis_dash.capitalize() + 'yay'  # Capitalizes initial letter and appends suffix 'yay'
-            print(v_oink)
-        else:
-            lexis_dash_list.append(letter)
-            lexis_dash_list.remove(letter)  # Removes initial consonant
-            lexis_dash = ''.join(lexis_dash_list)
-            c_oink = lexis_dash + 'ay'  # This creates the suffix for c-initial user input
-            c_oink.capitalize()  # Capitalizes initial letter
-            print(c_oink)
+    # for letter in consonants:
+
+    if lexis_dash_list[0] in consonants:
+
+        while lexis_dash_list[0] in consonants:
+            lexis_dash_list.append(lexis_dash_list[0])  # Removes initial onsonant
+            lexis_dash_list.remove(lexis_dash_list[0])  # Removes initial onsonant
+
+
+        lexis_dash = ''.join(lexis_dash_list)
+        c_oink = lexis_dash.capitalize() + 'ay'  # Capitalizes initial letter and appends suffix 'ay'
+        print(c_oink)
+
+    else:
+        lexis_dash = ''.join(lexis_dash_list)
+        v_oink = lexis_dash.capitalize() + 'yay'  # Capitalizes initial letter and appends suffix 'yay'
+        print(v_oink)
 
 
 def gather():
