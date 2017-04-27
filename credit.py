@@ -42,20 +42,34 @@ def validate(account_number):
     """
 
     plastic_fantastic = list()  # Preferred over using 'var = []'
-    card_nums = account_number[0:len(account_number) - 1:1]
 
-    card_nums_r = card_nums[::-1]
+    check_digit = str(account_number.pop())
 
-    for n in range(len(card_nums_r)):
-        elem = card_nums_r[n]
+    smun = account_number[::-1]
+
+    for n in range(len(smun)):
+        elem = smun[n]
         if n % 2 == 0:
             elemite = elem * 2
-            print(elemite)
         else:
             elemite = elem
 
         plastic_fantastic.append(elemite)
 
+    plastic_bombastic = list()
 
+    for n in range(len(plastic_fantastic)):
+        num = plastic_fantastic[n]
+        if num > 9:
+            plastic_bombastic.append(num - 9)
+        else:
+            plastic_bombastic.append(num)
 
-   return
+    digi_two = str(sum(plastic_bombastic))[1]
+
+    if digi_two == check_digit:
+        print('Valid!')
+    else:
+        print('Invalid!')
+
+    return

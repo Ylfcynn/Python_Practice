@@ -16,10 +16,10 @@ def run():
 
     answer = input(prompt)
 
-    affirmative = ['yes', 'Yes', 'yeah', 'Yeah', 'yea', 'Yea', 'uh huh', 'uh huh']
+    affirmative = ['yes', 'Yes', 'yeah', 'Yeah', 'yea', 'Yea', 'uh huh', 'Uh huh']
 
     if answer in affirmative:
-        spin = (random.randrange(1, 6,))
+        spin = random.randrange(1, 6,)
         if spin in range(1, 5):
             print('<click>')
 

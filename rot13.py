@@ -48,4 +48,30 @@ Write a program that decrypts a message encoded with ROT13 on each charachter st
 # Write your code below.
 
 
+import string
+
+
+def decrypter(garbled):
+    degarbled = []
+    for char in garbled:
+        if char in string.ascii_letters:
+            true_char = ord(char) + 13
+            if true_char > 90:
+                true_char = ord(char) - 13
+                degarbled.append(chr(true_char))
+            else:
+                degarbled.append(chr(true_char))
+        else:
+            degarbled.append(char)
+    eureka = ''.join(degarbled)
+
+    print(eureka)
+
+
+def gather():
+    garbled = list(input('Enter encrypted text: '))
+    decrypter(garbled)
+
+
+gather()
 
