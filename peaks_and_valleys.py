@@ -19,19 +19,69 @@
 """
 
 
+"""
+My first solution for peaks.
+"""
+
 def peaks(data):
-    spew = list()
+    
+    maxima = list()
+
+    counter = 0
+    
+    for datum in data:
+        if datum == data[0]:
+            counter += 1
+
+        elif datum == data[len(data)-1]:
+            break
+            
+        elif data[counter] - data[counter - 1] > 0 and data[counter] - data[counter + 1] > 0:
+            maxima.append(data.index(data[counter]))
+        counter += 1
+    
+    return maxima
+
+
+def valleys(data):
+
+    minima = list()
+
+    counter = 0
+    
+    for datum in data:
+        if datum == data[0]:
+            counter += 1
+
+        elif datum == data[len(data)-1]:
+            break
+            
+        elif data[counter] - data[counter - 1] < 0 and data[counter] - data[counter + 1] < 0:
+            minima.append(data.index(data[counter]))
+        counter += 1
+    
+    return minima
+
+
+"""
+def peaks(data):
+
+    maxima = list()
 
     for index, datum in enumerate(data):
 
+        this_one = datum  # Here
+        next = data[index+1]    # Ahead
+
+
         if index == 0 or index == (len(data) - 1):
-            break
+            continue
 
         else:
-            datum > datum[index + 1] and datum > datum[index - 1]
+            datum > datum index + 1 and datum > datum index - 1
             spew.append(datum)
 
-    return spew
+    return maxima
 
 
 def valleys(data):
@@ -43,3 +93,4 @@ def peaks_and_valleys(data):
 
 def chop(data, points_of_interest):
     pass
+"""
