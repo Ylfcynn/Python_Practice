@@ -15,13 +15,42 @@ This program must accomplish the following operations:
 
 import os
 import re
+from bs4 import soup
 
 
 BASE_DIR = '/Users/ylf/Git/Python_Practice/rain'
 
 
-#def reckon_year(diced_data: str) -> str:
+class RainStation:
+    def __init__(self, url: str):
+        self.url = url
+        self.raw_text = self.scrape_station()  # Scrapes the raw data from the URL
+        name, address = self.parse_header()
+        self.name = name
+        self.address = address
+        self.rain_data = list()
 
+    def scrape_station(self: str) -> str:
+        response = requests.get(self.url)  # Sends an HTML request over the interwebs
+        raw_text = response.text
+        return raw_text
+
+
+    def parse_header():
+        name, address = self.raw_text.splitlines()[0].split(' - ')  # Doesn't work for Sylvania and terminal4ne
+        return name, address
+
+    def __repr__(self):
+        message = f'Rain station: {self.name} - {self.address}, url={self.url}'
+        return message
+
+    def __str__(self):
+        message = f'This is the data for rain station {self.name} - {self.address}'
+        return message
+
+
+def reckon_year(diced_data: str) -> str:
+    pass
 
     #rainiest_year =
 
@@ -32,13 +61,12 @@ def reckon_day(diced_data: dict) -> str:
     :return:                                     
     """
     rainiest = max(diced_data.items(), key=lambda t: t[1][0])  # Returns value of the first element of the tuple
-    print(rainiest)
     rainiest_day = rainiest[0]
     rainiest_total = rainiest[1][0]
     print(f'Rainiest day: {rainiest_day}', f'Total precipitation: {rainiest_total}', sep='\n')
 
 
-def slice_n_dice(raw_text: str) -> dict:
+def slice_n_dice(raw_text: str) -> dict:    # Insert this into the class RainStation
     """                                            
     This converts raw text into a searchable 3-d data structure (dictionary).
     :return: dict                                    
@@ -46,7 +74,7 @@ def slice_n_dice(raw_text: str) -> dict:
     tranches = raw_text.splitlines()
     decapitated = tranches[11::]
     sliced_data = (tranche.split() for tranche in decapitated)
-    diced_data = {daily_rain[0]: (daily_rain[1], daily_rain[2:]) for daily_rain in sliced_data}   # Suggested by Kieran
+    diced_data = {daily_rain[0]: (int(daily_rain[1]), daily_rain[2:]) for daily_rain in sliced_data if daily_rain[1] != '-'}   # Suggested by Kieran
     reckon_day(diced_data)
 
 
@@ -59,6 +87,43 @@ def file_handler(filesystem_path: str) -> str:
     with open(filesystem_path, 'r') as file:                     # This is a context manager.
         raw_text = file.read()                                   # returns entire file contents as a single string
         return raw_text
+
+
+def collate_links():
+    pass
+
+
+def follow_links():
+     links = collate_links()
+     rain_stations = list()
+     failed_links = list()
+
+     counter = 0
+
+     for link in links:
+
+         try:
+             rs = RainStation(url=link)
+             failed_links.append(rs)
+
+         except ValueError:
+             failed_links.append(rs)
+             chalk.red(f'Station {counter} failed.')
+
+         else:
+             rain_stations.append(rs)
+             chalk.green(f'{counter}: Success!')
+
+         finally:
+             counter += 1
+
+#     failed_stations = list()
+#     for link in links:
+#         rs = RainStation(url=link)
+#         try:
+#             rain_stations.append.(rs)
+#         except ValueError:
+#             failed_stations
 
 
 def run():

@@ -83,12 +83,12 @@ def bool_herder(results):
 
 
 def obseq_droid(candidates):
-    print('Greetings citizen! Welcome to the Chernobog Industries PeoplePower 6000™.\n'
+    print('Greetings citizen! Welcome to the Chernobog Industries PeoplePower 6000®.\n'
           'Chernobog Industries prides itself on providing powerful and secure solutions for free elections.\n'
           'With our FreedomEngine™ technology, rest assured that your vote will be confidential and be\n'
           'counted accurately.\n'
           '\n'
-          'Chernobog Industries - \"Putting the \'Mob\' into mob rule.\"\n')
+          'Chernobog Industries - \"Putting the \'Mob\' into mob rule.™\"\n')
 
     thugs = list(enumerate(candidates))
 

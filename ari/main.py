@@ -20,7 +20,7 @@ CODEX_ROOT = '/Users/ylf/Git/Python_Practice/ari/codices/'  # Global variables a
 
 def ari_proc(codex: str) -> str:
     """
-
+    
     """
     whitey_b_gone = codex.replace(' ', '')
     文章 = re.split('[.|?|!]', whitey_b_gone)
