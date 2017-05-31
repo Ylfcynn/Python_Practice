@@ -1,0 +1,42 @@
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  background-color: black;
+  width: 30%;
+}
+
+.sidebar_module {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  height: 320px;
+  background-color: white;
+}
+
+#square {
+  height: 100px;
+  width: 150px;
+}
+
+#option-1 {
+  height: 20px;
+  width: 130px;
+}
+
+#option-2 {
+  height: 20px;
+  width: 150px;
+}
+
+#option-1 {
+  height: 20px;
+  width: 140px;
+}
+
+#option-1 {
+  height: 20px;
+  width: 130px;
+}

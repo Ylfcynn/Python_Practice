@@ -1,0 +1,90 @@
+/* General styles - put these straight into your stylesheet */
+
+html {
+  font-family: 'Helvetica neue', Arial, 'sans serif';
+  font-size: 10px;
+  background-color: grey;
+}
+
+#baked {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 1px dashed red;
+}
+
+#card {
+  width: 55em;
+  height: 35em;
+  margin: 5em auto;
+  border: 0.2em solid black;
+  border-radius: 1.5em;
+  background-color: white;
+}
+
+#article {
+  
+  outline: 1px dashed red;
+}
+
+#mugshot {    
+  max-width:60%;
+  max-height:60%;
+  outline: 1px dashed red;
+}
+
+#hawaii {
+  
+  outline: 1px dashed red;
+}
+
+#driver-license {
+  
+  outline: 1px dashed red;
+}
+
+#number {
+  
+  outline: 1px dashed red;
+}
+
+#01-47-87441 {
+      
+  outline: 1px dashed red;
+}
+
+.table {
+      
+  outline: 1px dashed red;
+}
+
+.date {
+      
+  outline: 1px dashed red;
+}
+
+#median {
+    
+  outline: 1px dashed red;
+}
+
+#signature {
+  
+  outline: 1px dashed red;
+}
+
+#footer {
+  
+  outline: 1px dashed red;
+}
+
+#name-and-address {
+  
+  outline: 1px dashed red;
+}
+
+#donor {
+  position: relative;
+  border-left: 
+  outline: 1px dashed red;      
+}

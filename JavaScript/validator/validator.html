@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Form Input Validator</title>
+    <style type="text/css" link="validator.css"></style>
+  </head>
+  <body>
+    <h1></h1>
+    <br>
+    <h2></h2>
+
+    <form>
+      <fieldset>
+        <legend>Enter your personal information that I'm totally gunna sell to the Russian mafia.</legend>
+        Given name<br>
+        <input type="text" name="first_name"><br>
+        <br>
+        Surname<br>
+        <input type="text" name="surname"><br>
+        <br>
+        Date of birth<br>
+        <input type="date" name="DoB" pattern="" title=""><br>
+        <br>
+        Telephone number<br>
+        <input type="tel" name="電話番号" pattern="" title=""><br>
+        <br>
+        Social Security number<br>
+        <input type="text" name="ssn" pattern="\d{3}(-?)\d{2}(-?)\d{4}" title="Nine digits with or without hyphens."><br>
+        <br>
+        <input type="submit" value="Submit"><br>
+      </fieldset>
+    </form>
+
+  </body>
+  <script type="text/javascript" src="validator.js"></script>
+</html>

@@ -52,7 +52,7 @@ import string
 
 
 def decrypter(garbled):
-    degarbled = []
+    degarbled = list()
     for char in garbled:
         if char in string.ascii_letters:
             true_char = ord(char) + 13

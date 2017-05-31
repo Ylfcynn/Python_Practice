@@ -1,0 +1,41 @@
+<html>
+
+<!-- feel free to rename the strings here
+     to fit the exercise, but keep the
+     HTML tags intact, especially
+     input, button, and div#result -->
+
+
+<style>
+/* feel free to make your page prettier! */
+body {
+  font: 16px/1.5 Helvetica, Arial, Sans-Serif;
+  padding: 0 1em;
+}
+
+#result {
+  background: #ccc;
+  border: solid 1px black;
+  padding: 1em;
+}
+
+.error {
+  background: #c00;
+  color: white;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+}
+</style>
+
+<h1>Return of Change Return</h1>
+<h2>Input</h2>
+<form>
+  Enter the amount of change you have in cents.
+  <div id="error"></div>
+  <input name="input">
+  <button type="submit">Go</button>
+</form>
+<h2>Output</h2>
+<div id="result"></div>
+<script src="Return_of_Change_Return.js"></script>
+</html>

@@ -1,0 +1,7 @@
+input: valid {
+  border: 1px, green
+}
+
+input: invalid {
+  border: 1px, red
+}

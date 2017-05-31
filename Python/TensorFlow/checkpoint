@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/ylf/Git/Python_Practice/TensorFlow/best_model"
+all_model_checkpoint_paths: "/Users/ylf/Git/Python_Practice/TensorFlow/best_model"
